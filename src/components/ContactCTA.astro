@@ -1,14 +1,23 @@
 ---
-import CallToAction from "./CallToAction.astro";
 import Icon from "./Icon.astro";
 ---
 
 <aside>
-  <h2>Interested in working together?</h2>
-  <CallToAction href="mailto:ladsan@gmail.com">
-    Send Me a Message
-    <Icon icon="paper-plane-tilt" size="1.2em" />
-  </CallToAction>
+  <h2>Feel free to reach out — here's how to get in touch with me</h2>
+  <div class="contact-info">
+    <span class="contact-item">
+      <Icon icon="paper-plane-tilt" size="1.2em" />
+      ladsan@gmail.com
+    </span>
+    <span class="contact-item">
+      <Icon icon="phone" size="1.2em" />
+      <span class="phones">
+        <span>+57 312 432 4873</span>
+        <span class="pipe">|</span>
+        <span>+1 631 455 5364</span>
+      </span>
+    </span>
+  </div>
 </aside>
 
 <style>
@@ -16,7 +25,8 @@ import Icon from "./Icon.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    text-align: center;
+    gap: 2.5rem;
     border-top: 1px solid var(--gray-800);
     border-bottom: 1px solid var(--gray-800);
     padding: 5rem 1.5rem;
@@ -26,21 +36,51 @@ import Icon from "./Icon.astro";
 
   h2 {
     font-size: var(--text-xl);
-    text-align: center;
-    max-width: 15ch;
+    max-width: 30ch;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    color: var(--accent-regular);
+    font-size: var(--text-lg);
+  }
+
+  .phones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pipe {
+    display: none;
   }
 
   @media (min-width: 50em) {
     aside {
       padding: 7.5rem;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
     }
 
     h2 {
       font-size: var(--text-3xl);
-      text-align: left;
+    }
+
+    .phones {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pipe {
+      display: inline;
     }
   }
 </style>
